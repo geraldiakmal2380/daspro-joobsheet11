@@ -1,8 +1,14 @@
-public class kafe11{
+import java.util.Scanner;
 
-    public int menghitungtotalharga(int pilihanmenu,int Banyakitem){//fungsi menghitung total harga
+public class kafe10{
 
+    public static int menghitungtotalharga(int pilihanmenu,int Banyakitem){//fungsi menghitung total harga
+        int[] hargaitems = {15000,20000,2200,12000,10000,18000};
+
+        int hargatotal = hargaitems[pilihanmenu-1]*Banyakitem;
+        return hargatotal;
     }
+
     public static void menu(String namapelanggan,boolean isMember,String kodepromo){//fungsi printout 
 
         System.out.println("Halo Selamat datang, "+namapelanggan+" !");
@@ -25,11 +31,20 @@ public class kafe11{
         System.out.println("5. Roti Bakar - Rp 10,000");
         System.out.println("6. Mie Goreng - Rp 18,000");
         System.out.println("=========================");
+        System.out.println("Silahkan pilih menu yang anda inginkan.");   
         System.out.println("Silahkan pilih menu yang anda inginkan.");    
     }
 
 
     public static void main(String args[]){//main yang akan dilaksanakan
+        Scanner mlebu10 = new Scanner(System.in);
        menu("andre", true,"DISKON50");
+       System.out.print("\nMasukan nomor yang ingin anda pesan :");
+       int pilihanmenu = mlebu10.nextInt();
+       System.out.print("\nMasukan Jumlah item yang ingin anda pesan :");
+       int Banyakitem = mlebu10.nextInt();
+
+       int totalharga = menghitungtotalharga(pilihanmenu,Banyakitem);
+       
     }
 }
